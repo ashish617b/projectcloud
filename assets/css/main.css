@@ -1,376 +1,444 @@
- /* Author: Carlos Alvarez
- * URL: http://alvarez.is
- *
- * Project Name: Kelvin - Free Bootstrap 3 Resume Theme
- * Version: 1.0
- * URL: http://blacktie.co
- */
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-body {
-  background-color: #f2f2f2;
-    font-family: "Lato";
-    font-weight: 300;
-    font-size: 16px;
-    color: #555;
+    <title>Cloud Computing - Crash Data Analysis and Prediction</title>
 
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-}
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
 
-/* Titles */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway";
-    font-weight: 300;
-    color: #333;
-}
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/smoothscroll.js"></script> 
+    <script src="assets/js/Chart.js"></script>
 
+   
+  </head>
 
-/* Paragraph & Typographic */
-p {
-    line-height: 28px;
-    margin-bottom: 25px;
-}
+  <body data-spy="scroll" data-offset="0" data-target="#nav">
 
-.centered {
-    text-align: center;
-}
+	<div id="section-topbar">
+		<div id="topbar-inner">
+			<div class="container">
+				<div class="row">
+					<div class="dropdown">
+						<ul id="nav" class="nav">
+							<li class="menu-item"><a class="smoothScroll" onclick="document.getElementById('about').scrollIntoView()"  title="About"><i class="icon-user"></i></a></li>
+							<li class="menu-item"><a class="smoothScroll" onclick="document.getElementById('work').scrollIntoView()"title="Works"><i class="icon-briefcase"></i></a></li>
+							<li class="menu-item"><a class="smoothScroll" href="Resume_job.pdf" title="Resume"><i class="icon-file"></i></a></li>
+							<li class="menu-item"><a class="smoothScroll" onclick="document.getElementById('contact').scrollIntoView()" title="Contact"><i class="icon-envelope"></i></a></li>
+						</ul>
+					</div><!-- /.dropdown -->
 
-/* Links */
-a {
-    color: #f85c37;
-    word-wrap: break-word;
+					<div class="clear"></div>
+				</div><!--/.row -->
+			</div>
 
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
-}
-
-a:hover,
-a:focus {
-    color: #7b7b7b;
-    text-decoration: none;
-    outline: 0;
-}
-
-a:before,
-a:after {
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
-}
-
- hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-
-/*---------------------------------------------------
-	3.1 Topbar
----------------------------------------------------*/
-
-#section-topbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 10000;
-	overflow: visible;
-	font: normal 16px/24px  'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-#section-topbar a {
-  color: #fff;
-}
-
-#topbar-inner {
-	background: #111;
-	line-height: 0;
-	text-align: center;
-}
-
-/*
-	Top Bar
-
-	By default, top navigation bar uses "fixed" position
-*/
-#section-topbar ul#nav {
-	display: inline-block;
-	position: relative;
-	margin: 0;
-	padding: 0;
-
-	border-right: 1px solid #222;
-
-	/* For IE, the outcast */
-	zoom:1;
-	*display: inline;
-}
-
-#section-topbar ul#nav > li {
-	display: block;
-    float: left;
-    padding: 0;
-}
-
-
-#section-topbar ul#nav a {
-  display: block;
-  font: normal 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-decoration: none;
-  padding: 18px 20px 18px 20px;
-  border-left: 1px solid #222;
-}
-
-	#section-topbar ul#nav a:hover {
-	  background: #222;
-	  text-decoration: none;
-	  border-left: 1px solid #111;
-	}
-
-	#section-topbar ul#nav .active a {
-		background: #44bbaa;
-		border-left: 1px solid #111;
-	}
-
-		#section-topbar ul#nav .active a:hover {
-			background: #44bbaa;
-		}
-#section-topbar i {
-	font-size: 25px;
-}
-/*---------------------------------------------------
-	SECTION WRAPS
----------------------------------------------------*/
-
-/* Header Wrap */
-#headerwrap {
-	background: url(../img/slide-3.jpg) no-repeat center top;
-	margin-top: 60px;
-	padding-top:140px;
-	text-align:center;
-	background-attachment: relative;
-	background-position: center center;
-	min-height: 500px;
-	width: 100%;
+			<div class="clear"></div>
+		</div>
+	</div>
 	
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-#headerwrap h1 {
-	font-size: 80px;
-	color: white;
-}
-
-#headerwrap h3 {
-	font-size: 20px;
-	color: white;
-}
-
-/* Intnro Wrap */
-
-#intro {
-	background: #2c3e50;
-	padding-top: 60px;
-	padding-bottom: 60px;
-	color: white;
-} 
-
-#intro h5, p {
-	color: white;
-}
-
-#intro i {
-	color: white;
-	font-size: 20px;
-	padding-right: 8px;
-	vertical-align: middle;
-}
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-12">
+					<h1><b>Ashish Bandgar</b></h1>
+					<section class="rw-wrapper">
+						<h3 class="rw-sentence">
+						<span style="margin-left: 20%; color: white; "> Algorithms Used | </span>
 
 
-#skillswrap {
-	background: #2c3e50;
-	padding-top: 60px;
-	padding-bottom: 60px;
-	color: white;
-}
+								<div class="rw-words rw-words-1">
+									<span>Linear Regression</span>
+									<span>KNN Algorithm/span>
+								</div>
+								</h3>
+						</section>
+						
+				</div><!--/.col-lg-12 -->
+			</div><!--/.row -->
+		</div><!--/.container -->
+	</div>
+	
 
-#skillswrap h5, p {
-	color: white;
-}
-
-#footwrap {
-	background: #2f2f2f;
-	padding-top: 50px;
-	padding-bottom: 50px;
-}
-
-#footwrap p {
-	color: white;
-}
-
-#footwrap h5 {
-	color: white;
-}
-
-
-#footwrap t {
-	font-weight: 700;
-}
-
-#footwrap i {
-	padding-right: 8px;
-	color: #1abc9c;
-}
-
-/* Copyright Wrap */
-
-#c {
-	background: #222222;
-	padding-top: 15px;
-	text-align: right;
-}
-
-#c p {
-	color: white
-}
+	<section id="about" name="about"></section>
+	<div id="intro">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5>ABOUT</h5>
+				</div>
+				<div class="col-lg-6">
+					<p>I am a software developer/engineer with nearly 2 years of experience in variety of positions throughtout my professional life. Currently, I am pursuing my Masters in Computer Science at the University of North Carolina at Charlotte. My expertise is in  AngularJS, HTML/CSS, Java, JavaScript, Ruby on Rails, SQL. I also have good understanding of Node.js and MEAN development. If I have to say something about me, I would say, I am a person who is very adaptive to any environment and technology. I have a motto of not being bound by any technology, always be ready for challenges and learning new things. This helps me in learning a lot all the time and also exceed expectation. I am a pro-active person who will take on challenges.</p>
+				</div>
+				<div class="col-lg-3">
+					<p><a href="Resume_job.pdf" target="_blank">
+						<i class="icon-file"></i></a> <sm>DOWNLOAD PDF</sm></p>
+				</div>
+				
+			</div>
+		</div>
+	</div>
 
 
+	<section id="resume" name="resume"></section>
+	
+	<div class="container desc">
+		<div class="row">
 
-/* Global Values */
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5><b>EDUCATION</b></h5>
+				</div>
+				<div class="col-lg-6">
+					<p><t>Masters in Computer Science</t><br/>
+						University of North Carolina at Charlotte<br/>
+						<i>2 Years Course</i>
+					</p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>GRADUATING IN DEC 2017</sm><br/>
+					<imp><sm>IN PROGRESS</sm></imp>
+					</p>
+				</div>
+	
+				<div class="col-lg-6 col-lg-offset-3">
+					<p><t>Bachelor's in Computer Engineering</t><br/>
+						Pune University <br/>
+						<i>3 Years Course</i>
+					</p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>JULY 2015</sm></p>
+				</div>
+				
+				<div class="col-lg-6 col-lg-offset-3">
+					<p><t>Diploma in Computer Engineering</t><br/>
+						Pune University <br/>
+						<i>3 Years Course</i>
+					</p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>JULY 2012</sm></p>
+				</div>
+	
+		</div>
 
-.desc {
-	padding-top: 50px;
-}
+		<hr>
+	</div>
+	
+	<section id="work" name="work"></section>
+	<div class="container desc">
+		<div class="row">
+		<div class="col-lg-2 col-lg-offset-1">
+		
+		</div>
+		</div>
+		<div class ="row">
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5><b></b><b>WORK</b></h5>
+				</div>
+				<div class="col-lg-6">
+					<p><t></t><t>Graduate Assistant</t><br/>
+						University of North Carolina at Charlotte <br/>
+					</p>
+					<p><more>Teaching assistant for course ‘Software Engineering’ where my responsibilities include performing research,
+						creating assignments, conducting exams, grading, analyzing class performance.<br>I am also responsible for making students learn about
+						software engineering techniques, help them with full stack project development in Ruby on Rails.<br> I help and guide them on using AWS services for hosting, managing their databses using RDS, and ElasticBeanstalk.
+					</more></p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>January 2017 - CURRENT</sm></p>
+				</div>
+	
+	
+				<div class="col-lg-6 col-lg-offset-3">
+					<p><t>Graduate Research Assistant</t><br/>
+						University of North Carolina at Charlotte <br/>
+					</p>
+					<p><more>	Ruby on Rails platform and data analytics.
+								Leveraging RoR capabilities to analyze, gather metrics and understand different aspects of student learning initiative using various learning methods.
+								<br>Developed Ruby warrior code to help students in learning.
+								Established google oAuth for access to students.
+								Completely hosted website on AWS and gathering data in Csv format to analyze on R studio.
+								<br> I help and guide them on using AWS services for hosting, managing their databses using RDS, and Elastic Beanstalk.
+					</more></p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>January 2017 - CURRENT</sm></p>
+				</div>
+				
+				
+				<div class="col-lg-6 col-lg-offset-3">
+					<p><t>Software Engineer</t><br/>
+						Cybage Software - Rakuten <br/>
+					</p>
+					<p><more>
+						
+						<br>Sprint planning, defect tracking with JIRA and Confluence.
+						<br>Full stack development.Achieved 30% reduction in time for defect co-relation. 
+						<br>Reduce code redundancy, provide estimations on refactoring.
+						<br>Initiated refactoring of test suites reducing test count by 40%, increasing execution time by 20%. 
+						<br>Part of 4-member Agile impact team. 
 
-.desc p {
-	color: #2f2f2f;
-}
+						<br>Expertise in project management with TestRail, Rally, JIRA, Confluence along with version control like GIT.
+						<br>Proficient in Selenium web driver, automation for E-Commerce Testing using TestNG, Cucumber, SoapUI.
 
-.desc t {
-	color: #34495e;
-	font-weight: 700;
-}
+					</more></p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>JULY 2015 - JULY 2016</sm></p>
+				</div>
+				
+		</div>
 
-.desc imp {
-	padding: 6px;
-	color: white;
-	background: #34495e;
-}
-
-.desc more {
-	color: #95a5a6;
-}
+		<hr>
+	</div>
 
 
-sm {
-	font-size: 12px;
-}
-<!--Rotating words using CSS -->
- .rw-wrapper{
-	 width: 80%;
-	 position: relative;
-	 margin: 110px auto 0 auto;
-	 font-family: 'Bree Serif';
-	 padding: 10px;
- }
- .rw-sentence{
-	 margin: 0;
-	 text-align: left;
-	 text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
- }
- .rw-sentence span{
-	 color: #444;
-	 font-size: 140%;
-	 font-weight: normal;
+	
+	<div class="container desc">
+		<div class="row">
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5><b>AWARDS & PUBLICATION</b></h5>
+				</div>
+				<div class="col-lg-6">
+					<p><t>TOP SCORER AND MERIT - FRESHERS TRAINING PROGRAM - CYBAGE SOFTWARE</t><br/>
 
- }
- .rw-words{
-	 display: inline;
-	 text-indent: 10px;
+					</p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>SEPTEMBER 2015</sm></p>
+				</div>
+				
+			<div class="col-lg-6 col-lg-offset-3">
+				<p><t>TOUCHLESS WRITER: RECOGNIZING VARIOUS HAND GESTURES USING ARTIFICIAL NEURAL NETWORKS</t>
+				</p>
+				<p><more>Touchless Writer: Recognizing various Hand Gestures Using Artificial Neural networks through webcams and objects, International Journal of Advance Foundation and Research in Computer, Vol.2, Special Edition. ISSN – 2348-4853.</more></p>
+			</div>
+			<div class="col-lg-3">
+				<p><sm>APRIL 2015</sm></p>
+			</div>
 
- }
- .rw-words-1 span{
-	 position: absolute;
-	 opacity: 0;
-	 overflow: hidden;
-	 color: yellow;
-	 -webkit-animation: rotateWord 12s linear infinite 0s;
-	 -ms-animation: rotateWord 12s linear infinite 0s;
-	 animation: rotateWord 12s linear infinite 0s;
- }
- .rw-words-1 span:nth-child(2) {
-	 -webkit-animation-delay: 3s;
-	 -ms-animation-delay: 3s;
-	 animation-delay: 3s;
-	 color: yellow;
- }
- .rw-words-1 span:nth-child(3) {
-	 -webkit-animation-delay: 6s;
-	 -ms-animation-delay: 6s;
-	 animation-delay: 6s;
-	 color: yellow;
- }
- .rw-words-1 span:nth-child(4) {
-	 -webkit-animation-delay: 9s;
-	 -ms-animation-delay: 9s;
-	 animation-delay: 9s;
-	 color: yellow;
- }
+		</div>
 
-.rw-words-1 span:nth-child(5) {
-	 -webkit-animation-delay: 12s;
-	 -ms-animation-delay: 12s;
-	 animation-delay: 12s;
-	 color: yellow;
- }
+	</div>
+	
+	
+	<!--SKILLS DESCRIPTION -->
+	<div id="skillswrap">
+		<div class="container">
+			<div class="row">
+					<div class="col-lg-2 col-lg-offset-1">
+						<h5><b>SKILLS</b></h5>
+					</div>
+					<div class="col-lg-3 centered">
+						<canvas id="javascript" height="130" width="130"></canvas>
+						<p>Javascript</p>
+						<br>
+						<script>
+							var doughnutData = [
+									{
+										value: 70,
+										color:"#1abc9c"
+									},
+									{
+										value : 30,
+										color : "#ecf0f1"
+									}
+								];
+								var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
+						</script>
+					</div>
+					<div class="col-lg-3 centered">
+						<canvas id="bootstrap" height="130" width="130"></canvas>
+						<p>AngularJS</p>
+						<br>
+						<script>
+							var doughnutData = [
+									{
+										value: 60,
+										color:"#1abc9c"
+									},
+									{
+										value : 40,
+										color : "#ecf0f1"
+									}
+								];
+								var myDoughnut = new Chart(document.getElementById("bootstrap").getContext("2d")).Doughnut(doughnutData);
+						</script>
+					</div>
+					<div class="col-lg-3 centered">
+						<canvas id="wordpress" height="130" width="130"></canvas>
+						<p>Java</p>
+						<br>
+						<script>
+							var doughnutData = [
+									{
+										value: 80,
+										color:"#1abc9c"
+									},
+									{
+										value : 20,
+										color : "#ecf0f1"
+									}
+								];
+								var myDoughnut = new Chart(document.getElementById("wordpress").getContext("2d")).Doughnut(doughnutData);
+						</script>
+					</div>
+					
+					<div class="col-lg-3 col-lg-offset-3 centered">
+						<canvas id="html" height="130" width="130"></canvas>
+						<p>HTML/CSS</p>
+						<br>
+						<script>
+							var doughnutData = [
+									{
+										value: 80,
+										color:"#1abc9c"
+									},
+									{
+										value : 20,
+										color : "#ecf0f1"
+									}
+								];
+								var myDoughnut = new Chart(document.getElementById("html").getContext("2d")).Doughnut(doughnutData);
+						</script>
+					</div>
+					<div class="col-lg-3 centered">
+						<canvas id="photoshop" height="130" width="130"></canvas>
+						<p>REST WebServices</p>
+						<br>
+						<script>
+							var doughnutData = [
+									{
+										value: 70,
+										color:"#1abc9c"
+									},
+									{
+										value : 30,
+										color : "#ecf0f1"
+									}
+								];
+								var myDoughnut = new Chart(document.getElementById("photoshop").getContext("2d")).Doughnut(doughnutData);
+						</script>
+					</div>
+					<div class="col-lg-3 centered">
+						<canvas id="illustrator" height="130" width="130"></canvas>
+						<p>Ruby</p>
+						<br>
+						<script>
+							var doughnutData = [
+									{
+										value: 70,
+										color:"#1abc9c"
+									},
+									{
+										value : 30,
+										color : "#ecf0f1"
+									}
+								];
+								var myDoughnut = new Chart(document.getElementById("illustrator").getContext("2d")).Doughnut(doughnutData);
+						</script>
+					</div>
 
- @-webkit-keyframes rotateWord {
-	 0% { opacity: 0; }
-	 2% { opacity: 0; -webkit-transform: translateY(-30px); }
-	 5% { opacity: 1; -webkit-transform: translateY(0px);}
-	 17% { opacity: 1; -webkit-transform: translateY(0px); }
-	 20% { opacity: 0; -webkit-transform: translateY(30px); }
-	 80% { opacity: 0; }
-	 100% { opacity: 0; }
- }
- @-ms-keyframes rotateWord {
-	 0% { opacity: 0; }
-	 2% { opacity: 0; -ms-transform: translateY(-30px); }
-	 5% { opacity: 1; -ms-transform: translateY(0px);}
-	 17% { opacity: 1; -ms-transform: translateY(0px); }
-	 20% { opacity: 0; -ms-transform: translateY(30px); }
-	 80% { opacity: 0; }
-	 100% { opacity: 0; }
- }
- @keyframes rotateWord {
-	 0% { opacity: 0; }
-	 2% { opacity: 0; -webkit-transform: translateY(-30px); transform: translateY(-30px); }
-	 5% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px);}
-	 17% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px); }
-	 20% { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
-	 80% { opacity: 0; }
-	 100% { opacity: 0; }
- }
- @media screen and (max-width: 768px){
-	 .rw-sentence { font-size: 18px; }
- }
- @media screen and (max-width: 320px){
-	 .rw-sentence { font-size: 9px; }
- }
+			</div>
+
+		</div>
+	</div>
+
+
+	
+
+	<div class="container desc">
+		<div class="row">
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5><b>PROJECTS</b></h5>
+				</div>
+
+				<div class="col-lg-6">
+					<p><b>eCommerce website – Meet-A-Pet</b></p>
+				<p><more>Achieved full-fledged functioning website with data on multiple pets, accessories, checkout module, cart module.
+
+					<br>Hosted on AWS using elastic beanstalk, RDS.
+					</more>
+				</p>
+				</div>
+
+			<div class="col-lg-6 col-lg-offset-3">
+				<p><b>University website - admission portals, student registration</b></p>
+				<p><more>
+					<br>A website for student registration, admission process, and communication with students in Java.
+					<br>Completely hosted on AWS. MySQL workbench used for data handling, manipulation, and storage.
+				</more>
+				</p>
+			</div>
+
+			<div class="col-lg-6 col-lg-offset-3">
+				<p><b>Gesture recognition software to recognize alphabets</b></p>
+				<p><more>
+					<br>Led the team of 4 team members throughout the project working in 2-week sprint cycle.
+					<br>Developed an application using the OCR API for recognizing the hand gesture, recognize alphabets.
+					<br>Alphabet prediction and drawing in screen.
+				</more>
+				</p>
+			</div>
+		</div><!--/.row -->
+
+
+	</div><!--/.container -->
+	
+
+
+	<section id="contact" name="contact"></section>
+	<div id="footwrap">
+		<div class="container">
+			<div class="row">
+			
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5>CONTACT</h5>
+				</div>
+				<div class="col-lg-6">
+					<p><t>Email</t><br/>
+						ashish617b@gmail.com<br/>
+					</p>
+					<p><t>Adress</t><br/>
+						10001 Graduate lane <br/>
+						Apt K <br/>
+						Charlotte, NC-28262 <br/>
+					</p>
+					<p><t>Phone</t><br/>
+						+1 (704)-281-1546 <br/>
+					</p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>SOCIAL LINKS</sm></p>
+					<p>
+
+						<a href="https://www.linkedin.com/in/ashishbandgar/" target="_blank"><i class="icon-linkedin"></i></a>
+						<a href="https://github.com/ashish617b" target="_blank"><i class="icon-github" aria-hidden="true"></i></a>
+						<a href="mailto:ashish617b@gmail.com" target="_blank"><i class="icon-mail-forward"></i></a>
+
+
+
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+    <script src="assets/js/bootstrap.js"></script>
+  </body>
+</html
